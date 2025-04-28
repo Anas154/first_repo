@@ -2,14 +2,17 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
+      # or specify the runtime you need (python, java, etc.)
     commands:
-      - echo Installing dependencies
+      - echo Installing dependencies...
       - apt-get update
-      - apt-get install -y build-essential
+      - apt-get install -y curl unzip
   build:
     commands:
       - echo Build started on `date`
-      - make build  # or your custom build command
+      - echo Building the project...
 artifacts:
   files:
     - '**/*'
